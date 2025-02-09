@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hobby Explorer</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="modified.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  </head>
+  
+  <body>
+    <div class="theme-toggle">
+      <button id="themeButton">
+        <i class="fas fa-moon"></i>
+      </button>
+    </div>
+
+    <div class="container">
+      <header>
+        <div class="logo">
+          <i class="fas fa-compass"></i>
+          <h1>Hobby<span>Explorer</span></h1>
+        </div>
+        <p>Discover your perfect hobby based on your interests</p>
+      </header>
+
+      <div class="main-layout">
+        <!-- Left Section -->
+        <div class="content-main">
+          <section class="search-section glass-effect">
+            <div class="location-container">
+              <div class="location-info">
+                <i class="fas fa-location-dot"></i>
+                <span id="currentLocation">Detecting location...</span>
+              </div>
+              <button id="refreshLocation" class="icon-button">
+                <i class="fas fa-refresh"></i>
+              </button>
+            </div>
+
+            <div class="preferences">
+              <select id="duration" class="glass-input">
+                <option value="">Time Available</option>
+                <option value="quick">Quick (15-30 mins)</option>
+                <option value="medium">Medium (1-2 hours)</option>
+                <option value="long">Long (2+ hours)</option>
+              </select>
+
+              <select id="energy" class="glass-input">
+                <option value="">Energy Level</option>
+                <option value="low">Relaxed</option>
+                <option value="medium">Moderate</option>
+                <option value="high">Energetic</option>
+              </select>
+
+              <select id="social" class="glass-input">
+                <option value="">Social Preference</option>
+                <option value="solo">Solo</option>
+                <option value="small">Small Group</option>
+                <option value="large">Large Group</option>
+              </select>
+            </div>
+
+            <button id="findHobbies" class="primary-button">
+              <i class="fas fa-search"></i> Find Hobbies
+            </button>
+          </section>
+
+          <section class="filter-section glass-effect">
+            <div class="category-pills">
+              <button class="pill active" data-category="all">All</button>
+              <button class="pill" data-category="creative">Creative</button>
+              <button class="pill" data-category="physical">Physical</button>
+              <button class="pill" data-category="intellectual">
+                Intellectual
+              </button>
+              <button class="pill" data-category="social">Social</button>
+            </div>
+          </section>
+
+          <!-- Add this new section -->
+          <section class="popular-hobbies-section glass-effect">
+            <div class="popular-hobbies-header" id="popularHobbiesToggle">
+              <h2><i class="fas fa-star"></i> Popular Hobbies</h2>
+              <button class="toggle-button">
+                <i class="fas fa-chevron-down"></i>
+              </button>
+            </div>
+            <div class="popular-hobbies-content" id="popularHobbiesContent">
+              <div class="popular-hobbies-grid">
+                <!--  -->
+              </div>
+            </div>
+          </section>
+
+          <section class="results-section">
+            <div id="hobbyGrid" class="hobby-grid">
+              <!-- H -->
+            </div>
+          </section>
+        </div>
+
+        <!-- Right Section -->
+        <div class="content-sidebar">
+          <section class="weather-section glass-effect">
+            <div class="section-header">
+              <h2><i class="fas fa-cloud"></i> Weather</h2>
+              <button id="refreshWeather" class="icon-button">
+                <i class="fas fa-sync-alt"></i>
+              </button>
+            </div>
+            <div id="weatherWidget" class="weather-content">
+              <!--  -->
+            </div>
+          </section>
+
+          <section class="suggestions-section glass-effect">
+            <h2><i class="fas fa-lightbulb"></i> Weather-based Suggestions</h2>
+            <div id="weatherSuggestions" class="suggestions-content">
+              <!--  -->
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal" id="hobbyModal">
+      <div class="modal-content glass-effect">
+        <button class="close-button">×</button>
+        <div class="modal-body">
+          <!--  -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay">
+      <div class="loader"></div>
+      <p>Finding tailored hobbies for you... :)</p>
+    </div>
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="modified.js"></script>
+    <script src="config.js"></script>
+    <script src="modified.js"></script>
+  </body>
+</html>
