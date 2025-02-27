@@ -2,8 +2,6 @@
 
 A dynamic web application that helps users discover new hobbies based on their preferences, local weather conditions, and interests. The application integrates multiple APIs to provide a personalized and interactive experience.
 
-![Hobby Explorer Demo](path-to-your-demo-gif-or-image)
-
 ## 🌟 Features
 
 - 🎨 Interactive UI with Dark/Light theme support
